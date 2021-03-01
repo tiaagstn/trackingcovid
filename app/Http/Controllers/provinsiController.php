@@ -41,7 +41,7 @@ class provinsiController extends Controller
         $provinsi->nama_provinsi  /*nama field*/ = $request->nama_provinsi; 
         $provinsi->save(); //untuk menyimpan data suatu inputan
         return redirect()->route('provinsi.index');
-
+       
     }
     public function show($id)
     {
@@ -64,6 +64,7 @@ class provinsiController extends Controller
         $provinsi->nama_provinsi = $request->nama_provinsi;
         $provinsi->save();
         return redirect()->route('provinsi.index');
+       
 
     }
     public function destroy( $id)
@@ -71,7 +72,7 @@ class provinsiController extends Controller
         //menghapus data
         $provinsi = Provinsi::findOrFail($id)->delete();
         return redirect()->route('provinsi.index')
-                ->with(['message'=>'kereta berhasil dihapus']);
+                ->with(['message'=>'Berhasil dihapus']);
     }
     //
 

@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('index', function () {
+    return view('frontend.index');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -39,6 +41,8 @@ Route::resource('rw',RwController::class);
 use App\Http\Controllers\Kasus2Controller;
 Route::resource('kasus2',Kasus2Controller::class);
 Route::view('city','livewire.home');
+use App\Http\Controllers\FrontendController;
+Route::resource('index',FrontendController::class);
 // Route::get('provinsi', function (){
 //     return view('admin.provinsi.index');
 // });

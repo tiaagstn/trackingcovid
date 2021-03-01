@@ -46,11 +46,11 @@ class KecamatanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_kecamatan' => 'required|max:3|unique:kecamatans',
+            'kode_kecamatan' => 'required|max:10|unique:kecamatans',
             'nama_kecamatan' => 'required|unique:kecamatans',
         ],[
             'kode_kecamatan.required' => 'Kode Kecamatan Tidak Boleh Kosong',
-            'kode_kecamatan.max' => 'Kode Maximal 3 Karakter',
+            'kode_kecamatan.max' => 'Kode Maximal 10 Karakter',
             'kode_kecamatan.unique' => 'Kode Kecamatan Sudah Terdaftar',
             'nama_kecamatan.required' => 'Nama Kecamatan Tidak Boleh Kosong',
             'nama_kecamatan.unique' => 'Nama Kecamatan Sudah Terdaftar'
